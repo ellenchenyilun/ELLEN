@@ -168,7 +168,7 @@ ax.set_title('Comparing Casual&Registered Rentals in Different Seasons', fontsiz
 plt.show()
 `
 ```
-![Image image6](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_6.png)
+![Image image7](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_7.png)
 
 ```markdown
 `
@@ -185,7 +185,7 @@ ax.set_title('Registered Rental Percentatge in Different Weekdays', fontsize = 1
 plt.show()
 `
 ```
-![Image image7](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_7.png)
+![Image image8](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_8.png)
 
 ```markdown
 `
@@ -199,7 +199,7 @@ ax.legend(fontsize = 13)
 plt.show()
 `
 ```
-![Image image8](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_8.png)
+![Image image9](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_9.png)
 
 ```markdown
 `fig, ax = plt.subplots(1,1, figsize=(8,5))
@@ -216,7 +216,7 @@ plt.xlim(-1,4)
 plt.show()
 `
 ```
-![Image image9](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_9.png)
+![Image image10](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_10.png)
 
 ### Prepare the data for Regression
 ```markdown
@@ -228,7 +228,7 @@ corr = bikes_df[col].corr()
 corr.style.background_gradient()
 `
 ```
-![Image image10](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_10.png)
+![Image image11](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_11.png)
 
 ```markdown
 `col_cat = ['weekday', 'season', 'month', 'weather']
@@ -284,7 +284,7 @@ ax.legend(fontsize=13, loc='upper left')
 plt.show()
 `
 ```
-![Image image11](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_11.png)
+![Image image12](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_12.png)
 
 
 ### Model Selection
