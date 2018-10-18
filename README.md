@@ -1,11 +1,17 @@
-# Welcome the Elle's Sample Work
+# Welcome to Ellen's
 
-Please check out in here one Data-science related sample work of Ellen ;)
+Check out in here one sample work of Ellen ;)
 
 
 ## Capital Bike Rental Analysis
 
-The is the analysis for one bike rental company for Washington D.C.
+The is one sample analysis of capital bikeshare program in Washington D.C. the United States. This analysis focuses mainly on data exploration and visual sample, linear and polynomial regression modeling, and business recommendation, which is organized in following parts:
+
+1. Bike Reidership Daily Trend
+2. Seasonality trend Bike Ridership
+3. Data Preparation
+4. Regress
+5. Model Selection
 
 
 ### Import Related Packadge
