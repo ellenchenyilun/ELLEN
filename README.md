@@ -33,7 +33,7 @@ bikes_df.head()
 
 `
 
-![Image]('Ellen/image_2.png')
+![Image](Ellen/image/image_2.png)
 
 # Header 1
 ## Header 2
@@ -49,6 +49,7 @@ bikes_df.head()
 
 [Link](url) and ![Image](src)
 ```
+![Image](Ellen/image/image_2.png)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
