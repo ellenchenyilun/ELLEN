@@ -49,7 +49,7 @@ bikes_df.head()
 
 [Link](url) and ![Image](src)
 ```
-![Image image_2]('Ellen/image/image_2.png')
+![Image image_2](Ellen/image/image_2.png)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
