@@ -92,8 +92,10 @@ ax.legend(fontsize=13, loc = 'upper left')
 ax.set_title('Comparing Casual&Registered Rentals During the Day', fontsize = 15)
 plt.show()
 `
+```
 ![Image image3](Ellen/image/image_3.png)
 
+```markdown
 `
 holiday_df = bikes_df[bikes_df.holiday == 1]
 nonholiday_df = bikes_df[bikes_df.holiday == 0]
@@ -118,8 +120,10 @@ ax.legend(fontsize=13, loc = 'upper left')
 ax.set_title('Comparing Casual&Registered Rentals During the Day for Holiday&Non-holiday', fontsize = 15)
 plt.show()
 `
+```
 ![Image image4](Ellen/image/image_4.png)
 
+```markdown
 `
 fig, ax = plt.subplots(1,1, figsize=(10,5))
 make_violin(bikes_df.groupby('weather'), 'casual', 'registered')
@@ -163,8 +167,10 @@ ax.legend(fontsize=13, loc='upper left')
 ax.set_title('Comparing Casual&Registered Rentals in Different Seasons', fontsize = 15)
 plt.show()
 `
+```
 ![Image image6](Ellen/image/image_6.png)
 
+```markdown
 `
 bikes_by_day['registered_to_counts'] = bikes_by_day['registered']/bikes_by_day['counts']
 fig, ax = plt.subplots(1,1, figsize=(10,5))
@@ -178,8 +184,10 @@ ax.set_ylabel('number of rentals', fontsize = 13)
 ax.set_title('Registered Rental Percentatge in Different Weekdays', fontsize = 15)
 plt.show()
 `
+```
 ![Image image7](Ellen/image/image_7.png)
 
+```markdown
 `
 fig, ax = plt.subplots(1,1, figsize=(10,5))
 ax.hist((bikes_by_day.groupby('weather').get_group(2))['counts'], alpha = 0.3, color = 'black', label = 'cloudy')
@@ -190,8 +198,10 @@ ax.set_title('Histogram of Total Rentals in Different Weathers', fontsize = 15)
 ax.legend(fontsize = 13)
 plt.show()
 `
+```
 ![Image image8](Ellen/image/image_8.png)
 
+```markdown
 `fig, ax = plt.subplots(1,1, figsize=(8,5))
 cur_x_pos = 0
 for p , c in bikes_by_day.groupby('season'):
@@ -217,8 +227,10 @@ plt.show()
 corr = bikes_df[col].corr()
 corr.style.background_gradient()
 `
+```
 ![Image image10](Ellen/image/image_10.png)
 
+```markdown
 `col_cat = ['weekday', 'season', 'month', 'weather']
 bikes_df_onehot = pd.get_dummies(bikes_df, columns=col_cat, drop_first=True)
 train_data, test_data = train_test_split(bikes_df, test_size = 0.2, stratify=bikes_df['month'])
@@ -314,14 +326,6 @@ train_r2_new = BSS_sm_ols_new.rsquared
 BSS_sm_preditions_test_new = BSS_sm_ols_new.predict(sm.add_constant(X_test[col]))
 test_r2_new = r2_score(y_test, BSS_sm_preditions_test_new)
 
-print('For new model: {}'.format(col))
-print('The training r-squared is {0}'.format(train_r2_new))
-print('The test r-squared is {0}'.format(test_r2_new))
-print('---------------------------------------------------------------------------------------------')
-print('For whole model: {}'.format(X_train.columns.values))
-print('The training r-squared is {0}'.format(train_r2))
-print('The test r-squared is {0}'.format(test_r2))
-
 continuous_predictors = [['hour'], ['temp'], ['atemp'], ['hum'], ['windspeed']]
 X_train_polynomial = []
 for n in continuous_predictors:
@@ -349,16 +353,9 @@ preditions_test_poly = model_poly.predict(sm.add_constant(X_test_poly))
 r2_test_poly = r2_score(y_test, preditions_test_poly)
 
 print("For polynomial model: ['hour', 'hour^2', 'hour^3', 'hour^4','temp', 'temp^2', 'temp^3', 'temp^4', 'atemp', 'atemp^2', 'atemp^3', 'atemp^4', 'hum', 'hum^2', 'hum^3', 'hum^4', 'windspeed', 'windspeed^2', 'windspeed^3', 'windspeed^4']")
-print('The r2 for training data is {}'.format(r2_train_poly))
-print('The r2 for test data is {}'.format(r2_test_poly))
-print('---------------------------------------------------------------------------------------------')
-print('For linear model: {}'.format(col))
-print('The training r-squared is {0}'.format(train_r2_new))
-print('The test r-squared is {0}'.format(test_r2_new))
 
 model_poly.pvalues[model_poly.pvalues<0.05].index
 `
-
 # Header 1
 ## Header 2
 ### Header 3
@@ -374,12 +371,11 @@ model_poly.pvalues[model_poly.pvalues<0.05].index
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Report to Company
 
-### Jekyll Themes
+From the previous analyis, there are some predictors that are significant and effecitive in predicting the total rentals, such as "hour", "holiday", "temp", "weather" and so on. Frome the scatter matrix, it is not difficult to see that most of the predictors has no or ambiguous linear relations with the total rentals, except the "casual" and "registered" predictors, which actually are what compute the total rentals. Hence, adopting a linear model is hesitate. Additionaly, after running the multiple linear regression model, the result is not good. The test R2 of both full model and best model from forward selection equals to around 0.35, which is not desiarable. Therefore, an non-linear model is suggested. When selecting 5 continuous predictor: 'hour', 'temp', 'atemp', 'hum', 'windspeed' with their 1th ,2th ,3th and 4th power combined for a polynimial model, we get a higher test R2 at 0.47, which is better than that of the multiple linear regression. However, in this model, we ignore some seemingly highly related catigorical predictors, such as: holiday, weather, and month. Hence, this model can actually be further modified.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ellenchenyilun/Ellen/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+First of all, it is important to ensure the two peak hour supply especially for registered riders, they are of high chance to be commuer since a significant percent of ridership are driven from these two peak hours. Further reseaches such as riders demographic information and location can be conducted to address this problem. Secondly, the company can provide some special and innovative "bad weather day equipment" in the bysical station or even in the bike for people to go over the "bad weather" since from the analysis, the ridership drcrease in snow and strom weathers. Thirdly, winter promotion may worth a try, for example, sponsoring winter "cycling competion" or provide encentives for people to do cycling in winter day. This strategy will help to increase winter ridership, which is lower than that of other seasons. Forthly, the company should enhance the loyalty programme to keep the registered riders in hand since they are a large percent of the total riders.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Reference
+1.[Capital Bikeshare program](https://www.capitalbikeshare.com) program
