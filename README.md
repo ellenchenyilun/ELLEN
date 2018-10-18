@@ -1,12 +1,14 @@
-## Welcome the Elle's Sample Work
+# Welcome the Elle's Sample Work
 
 Please check out in here one Data-science related sample work of Ellen ;)
 
 
-### Capital Bike Rental Analysis
+## Capital Bike Rental Analysis
 
 The is the analysis for one bike rental company for Washington D.C.
 
+
+### Import Related Packadge
 ```markdown
 `
 import numpy as np
@@ -31,8 +33,13 @@ print(bikes_df.dtypes)
 bikes_df.head()
 
 `
+```
 ![Image image2](Ellen/image/image_2.png)
 
+
+### Explore How Bike Rideship Varies With Hour of The Day
+
+```markdown
 `
 bikes_df['year'] = bikes_df['dteday'].dt.year
 bikes_df['month'] = bikes_df['dteday'].dt.month
@@ -128,8 +135,14 @@ ax.legend(fontsize=13)
 ax.set_title('Comparing Casual&Registered Rentals in Different Weather', fontsize = 15)
 plt.show()
 `
+```
+
 ![Image image5](Ellen/image/image_5.png)
 
+
+### Explore Seasonality on Bike Ridership
+
+```markdown
 `
 df = pd.read_csv('data/BSS_hour_raw.csv')
 bikes_by_day = df.groupby('dteday').agg({'weekday': 'mean', 'weather': 'max', 'season': 'mean', 'temp': 'mean', 'atemp':'mean', 'windspeed': 'mean', 'hum':'mean', 'casual': 'sum', 'registered':'sum' })
@@ -190,10 +203,13 @@ ax.set_xlabel('season', fontsize = 13)
 ax.set_ylabel('number of rentals', fontsize = 13)
 ax.set_title('Distribution of Rentals in Different Seasons', fontsize = 15)
 plt.xlim(-1,4)
-plt.show()`
-
+plt.show()
+`
+```
 ![Image image9](Ellen/image/image_9.png)
 
+### Prepare the data for Regression
+```markdown
 `col = ['weekday', 'season', 'month', 'weather', 'temp', 'atemp', 'hum', 'windspeed', 'casual', 'registered', 'counts']
 scatter_matrix(bikes_df[col], figsize = (20,10))
 plt.show()
@@ -222,8 +238,13 @@ print(rental_pos)
 stack = corr_train.stack()
 big_cor = [stack.index[x] for x in np.where(stack.values>0.7)[0]]
 big_cor_real = [(x,y) for x, y in big_cor if x!=y]
-big_cor_real  
+big_cor_real
+`
+```
+### Multiple Linear Regression
 
+```markdown
+`
 X_train = BSS_train.drop('counts', axis = 1)
 X_train = sm.add_constant(X_train)
 y_train = BSS_train.counts
@@ -250,9 +271,14 @@ ax.set_title('Residual Plot', fontsize=15)
 ax.legend(fontsize=13, loc='upper left')
 plt.show()
 `
+```
 ![Image image11](Ellen/image/image_11.png)
 
-`def get_bic(X_train, y_train):
+
+### Model Selection
+```markdown
+`
+def get_bic(X_train, y_train):
     model = OLS(y_train, X_train).fit()
     return model.bic
 
@@ -347,7 +373,6 @@ model_poly.pvalues[model_poly.pvalues<0.05].index
 
 [Link](url) and ![Image](src)
 ```
-![Image image_2](Ellen/image/image_2.png)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
