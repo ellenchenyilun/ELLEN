@@ -34,7 +34,7 @@ bikes_df.head()
 
 `
 ```
-![Image image2](Ellen/image/image_2.png)
+![Image image2](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_2.png)
 
 
 ### Explore How Bike Rideship Varies With Hour of The Day
