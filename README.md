@@ -12,6 +12,7 @@ The is one sample analysis of capital bikeshare program in Washington D.C. the U
 3. Data Preparation
 4. Regress
 5. Model Selection
+6. Summary
 
 
 ### Import Related Packadge
@@ -364,7 +365,7 @@ model_poly.pvalues[model_poly.pvalues<0.05].index
 `
 ```
 
-### Report to Company
+### In a Nutshell
 
 From the previous analysis we can see that some predictors are significant and effecitive in predicting the total rentals, such as "hour", "holiday", "temp", "weather" and etc. Frome the scatter matrix, it is not difficult to see that most of the predictors has no or ambiguous linear relations with the total rentals, except the "casual" and "registered" predictors, from which total rental is computed. Hence, adopting a linear model is hesitate. Additionaly, after running the multiple linear regression model, the result is not good. The test R2 of both full model and best model from forward selection equals to around 0.35, which is not desiarable. Therefore, an non-linear model is suggested. When selecting 5 continuous predictor: 'hour', 'temp', 'atemp', 'hum', 'windspeed' with their 1th ,2th ,3th and 4th power combined for a polynimial model, we get a higher test R2 at 0.47, which is better than that of the multiple linear regression. However, in this model, we ignore some seemingly highly related catigorical predictors, such as: holiday, weather, and month. Hence, this model can actually be further modified.
 
