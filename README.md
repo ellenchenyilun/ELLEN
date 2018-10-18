@@ -93,7 +93,7 @@ ax.set_title('Comparing Casual&Registered Rentals During the Day', fontsize = 15
 plt.show()
 `
 ```
-![Image image3](Ellen/image/image_3.png)
+![Image image3](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_3.png)
 
 ```markdown
 `
@@ -121,7 +121,7 @@ ax.set_title('Comparing Casual&Registered Rentals During the Day for Holiday&Non
 plt.show()
 `
 ```
-![Image image4](Ellen/image/image_4.png)
+![Image image4](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_4.png)
 
 ```markdown
 `
@@ -141,7 +141,7 @@ plt.show()
 `
 ```
 
-![Image image5](Ellen/image/image_5.png)
+![Image image5](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_5.png)
 
 
 ### Explore Seasonality on Bike Ridership
@@ -168,7 +168,7 @@ ax.set_title('Comparing Casual&Registered Rentals in Different Seasons', fontsiz
 plt.show()
 `
 ```
-![Image image6](Ellen/image/image_6.png)
+![Image image6](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_6.png)
 
 ```markdown
 `
@@ -185,7 +185,7 @@ ax.set_title('Registered Rental Percentatge in Different Weekdays', fontsize = 1
 plt.show()
 `
 ```
-![Image image7](Ellen/image/image_7.png)
+![Image image7](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_7.png)
 
 ```markdown
 `
@@ -199,7 +199,7 @@ ax.legend(fontsize = 13)
 plt.show()
 `
 ```
-![Image image8](Ellen/image/image_8.png)
+![Image image8](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_8.png)
 
 ```markdown
 `fig, ax = plt.subplots(1,1, figsize=(8,5))
@@ -216,7 +216,7 @@ plt.xlim(-1,4)
 plt.show()
 `
 ```
-![Image image9](Ellen/image/image_9.png)
+![Image image9](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_9.png)
 
 ### Prepare the data for Regression
 ```markdown
@@ -228,7 +228,7 @@ corr = bikes_df[col].corr()
 corr.style.background_gradient()
 `
 ```
-![Image image10](Ellen/image/image_10.png)
+![Image image10](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_10.png)
 
 ```markdown
 `col_cat = ['weekday', 'season', 'month', 'weather']
@@ -284,7 +284,7 @@ ax.legend(fontsize=13, loc='upper left')
 plt.show()
 `
 ```
-![Image image11](Ellen/image/image_11.png)
+![Image image11](https://github.com/ellenchenyilun/Ellen/raw/master/image/image_11.png)
 
 
 ### Model Selection
@@ -356,19 +356,6 @@ print("For polynomial model: ['hour', 'hour^2', 'hour^3', 'hour^4','temp', 'temp
 
 model_poly.pvalues[model_poly.pvalues<0.05].index
 `
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
 ### Report to Company
