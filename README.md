@@ -33,7 +33,7 @@ bikes_df.head()
 
 `
 
-![Image](Ellen/image_2.png)
+![Image]('Ellen/image_2.png')
 
 # Header 1
 ## Header 2
