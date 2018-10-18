@@ -1,15 +1,39 @@
-## Welcome to GitHub Pages
+## Welcome the Elle's Sample Work
 
-You can use the [editor on GitHub](https://github.com/ellenchenyilun/Ellen/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Please check out in here one Data-science related sample work of Ellen ;)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Capital Bike Rental Analysis
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The is the analysis for one bike rental company for Washington D.C.
 
 ```markdown
-Syntax highlighted code block
+`
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+from statsmodels.api import OLS
+from sklearn import preprocessing
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split
+from pandas.plotting import scatter_matrix
+import seaborn as sns
+
+bikes_df = pd.read_csv('data/BSS_hour_raw.csv')
+print(bikes_df.dtypes)
+bikes_df.describe()
+
+
+bikes_df['dteday'] = pd.to_datetime(bikes_df['dteday'])
+print(bikes_df.dtypes)
+bikes_df.head()
+
+`
+
+![Image](src)
 
 # Header 1
 ## Header 2
